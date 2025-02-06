@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formador de Grupos Aleatórios</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Formador de Grupos Aleatórios</h1>
+
+      <!-- Campo para inserir a lista manualmente -->
+      <textarea
+        id="listaPessoas"
+        placeholder="Digite os nomes, separados por vírgula ou linha"
+      ></textarea>
+
+      <!-- Campo para carregar arquivo -->
+      <input type="file" id="arquivo" accept=".txt,.docx" />
+
+      <!-- Campo para escolher o número de grupos ou duplas -->
+      <div class="opcoes">
+        <label>
+          <input type="radio" name="tipoGrupo" value="duplas" checked /> Formar
+          Duplas
+        </label>
+        <label>
+          <input type="radio" name="tipoGrupo" value="grupos" /> Formar Grupos
+          de
+          <input
+            type="number"
+            id="quantidadeGrupos"
+            min="2"
+            max="10"
+            value="2"
+            disabled
+          />
+        </label>
+      </div>
+
+      <!-- Botões -->
+      <div class="botoes">
+        <button id="sortear">Sortear Grupos</button>
+        <button id="resetar">Resetar</button>
+        <button id="reiniciar">Reiniciar</button>
+      </div>
+
+      <!-- Exibição dos grupos -->
+      <div id="grupos"></div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
